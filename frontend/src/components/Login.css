@@ -1,0 +1,25 @@
+.Login{
+    margin-top: 100px;
+    text-align: center;
+}
+.form-login{
+    border-radius: 5px;
+    background-color:rgb(173, 255, 184);
+}
+
+h3{
+    color:tomato;
+}
+#login{
+    margin:20px;
+    color:rgb(0, 0, 0);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+#login:hover{
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+.border{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
