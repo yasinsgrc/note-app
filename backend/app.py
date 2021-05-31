@@ -34,7 +34,7 @@ class User(db.Model):
 class Notes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), unique=False, nullable=False)
-    note = db.Column(db.Text, unique=True, nullable=False)
+    note = db.Column(db.Text, unique=False, nullable=False)
     user_id=db.Column(db.Integer, nullable=False)
     
     
@@ -93,7 +93,13 @@ def add_note():
     db.session.add(new_todo)
     db.session.commit()
     
-    return jsonify({'message':'Note created'})
+    note=Notes.query.filter_by(title=note_title, note=note_text).first()
+    new_note={}
+    new_note["id"]=note.id
+    new_note["title"]=note.title
+    new_note["note"]=note.note
+    
+    return jsonify({'note':new_note})
 
 @app.route("/note/<note_id>", methods=["DELETE"])
 @jwt_required() 
